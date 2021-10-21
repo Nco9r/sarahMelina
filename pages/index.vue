@@ -52,6 +52,10 @@ main {
   text-align: center;
 }
 
+
+.logo {
+  margin-top: -200px;
+}
 .content_hero {
   margin-top: -50px;
 
