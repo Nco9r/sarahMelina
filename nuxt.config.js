@@ -1,6 +1,6 @@
-export default {
+module.exports = {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  buildDir: 'nuxt-dist',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -18,35 +18,51 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {rel: 'preconnect', href: 'https://fonts.googleapis.com'},
       {rel: 'preconnect', href: 'https://fonts.gstatic.com'},
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap'},
+      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap'},
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
+  loading: { color: '#fff' },
+  /*
+  ** Global CSS
+  */
   css: [
   ],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  /*
+  ** Plugins to load before mounting the App
+  */
+  plugins: [{ src: '~/plugins/vue-tiny-slider.js', mode: 'client' }],
+  /*
+  ** Nuxt.js dev-modules
+  */
   buildModules: [
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  serverMiddleware: [
+   
+  ],
+  /*
+  ** Nuxt.js modules
+  */
   modules: [
-    // https://go.nuxtjs.dev/axios
+    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  /*
+  ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
+  */
+  axios: {
+  },
+  /*
+  ** Build configuration
+  */
   build: {
+    /*
+    ** You can extend webpack config here
+    */
+    extend (config, ctx) {
+    }
   }
 }

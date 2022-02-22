@@ -2,13 +2,20 @@
   <div>
 
     <nuxt />
-
+    <the-footer/>
   </div>
 </template>
+
 <script>
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import TheFooter from '../components/Default/TheFooter.vue'
+gsap.registerPlugin(ScrollTrigger)
+
 
 export default {
   components: {
+    TheFooter
  
   },
 }
@@ -39,15 +46,38 @@ body {
     overflow-x: hidden;
 }
 :root {
-  --background: #F8F2E7;
+  --rose: #FFD9DF;
+  --rose-secondary: #FD9FAE;
   --redBody: #9c3135; 
-  --green: #3e834e; 
+  --green: #D3E9E7; 
   --green-rhum: #155323; 
   --body: #4e4e4e;
+  --gray-secondary: #afafaf;
   --white: #fff;
+  --gray: #EFEFEF;
+  --bleu: #2CA2B3;
   --black: #202020;
+  --yellow: #F8ED63;
 }
 
+.btn button {
+  background-color: var(--rose);
+  color: var(--black);
+  padding: 12px 24px;
+  border: none;
+  appearance: none;
+  border-radius: 20px;
+  font-weight: 900;
+  width: 180px;
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+@media  screen and (min-width: 768px) {
+  body {
+    display: none;
+  }
+}
 
 
 
